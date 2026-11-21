@@ -57,6 +57,14 @@ namespace LINQ_01
                 Console.WriteLine(nt);
             }
             #endregion
+
+            #region 7. Print each product's name along with its position (1-based) in the list. Expected format: 1.Chai, 2.Chang, etc.
+            var position = ProductList.Select((p, i) => $"{i+1}.{p.ProductName} , ");
+            foreach (var p in position)
+            {
+                Console.Write(p);
+            }
+            #endregion
         }
     }
 }
