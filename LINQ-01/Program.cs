@@ -40,6 +40,14 @@ namespace LINQ_01
                 Console.WriteLine(p);
             }
             #endregion
+
+            #region 5. Get all products that are in stock (UnitsInStock > 0) and belong to the "Condiments" category.
+            var condiments = ProductList.Where(p => p.UnitsInStock > 0 && p.Category.Contains("Condiments")).Select(p => p);
+            foreach (var c in condiments)
+            {
+                Console.WriteLine(c);
+            }
+            #endregion
         }
     }
 }
