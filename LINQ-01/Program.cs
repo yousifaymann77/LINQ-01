@@ -1,5 +1,6 @@
 ﻿using LINQ.Models;
 using System.Drawing;
+using System.Numerics;
 using static LINQ.DataSources.Source;
 
 namespace LINQ_01
@@ -83,6 +84,18 @@ namespace LINQ_01
             {
                 Console.WriteLine(p);
             };
+            #endregion
+
+
+            #region 10. Using QUERY SYNTAX with a compound from clause, list all orders placed in 1997 or later showing CustomerID and OrderDate.
+            var Result1 = from c in CustomerList
+                          from o in c.Orders
+                          where o.OrderDate.Year >= 1997
+                          select new { c.CustomerID, o.OrderDate };
+            foreach (var r in Result1)
+            {
+                Console.WriteLine(r);
+            }
             #endregion
         }
     }
