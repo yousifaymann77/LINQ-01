@@ -1,4 +1,5 @@
 ﻿using LINQ.Models;
+using System.Drawing;
 using static LINQ.DataSources.Source;
 
 namespace LINQ_01
@@ -72,6 +73,16 @@ namespace LINQ_01
             {
                 Console.WriteLine(s);
             }
+            #endregion
+
+            Console.WriteLine();
+
+            #region 9. Get all products from the "Beverages" category, sorted by UnitsInStock descending. Print name and stock.
+            var Result = ProductList.Where(p => p.Category == "Beverages").OrderByDescending(p => p.UnitsInStock).Select(p => new { p.ProductName, p.UnitsInStock });
+            foreach(var p in Result)
+            {
+                Console.WriteLine(p);
+            };
             #endregion
         }
     }
