@@ -97,6 +97,17 @@ namespace LINQ_01
                 Console.WriteLine(r);
             }
             #endregion
+
+
+            #region 11. Show position number alongside ProductName
+            var Result2 = (from p in ProductList
+                          select p.ProductName).Select((n, i) => $"{i + 1}. {n}");
+            foreach (var r in Result2)
+            {
+                Console.WriteLine(r);
+            }
+
+            #endregion
         }
     }
 }
