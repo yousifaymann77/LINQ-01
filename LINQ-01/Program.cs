@@ -1,7 +1,9 @@
 ﻿using LINQ.Models;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Numerics;
 using static LINQ.DataSources.Source;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LINQ_01
 {
@@ -116,6 +118,14 @@ namespace LINQ_01
 
             var Result3 = Arr.OrderBy(s => s.Length).ThenBy(s => s, StringComparer.OrdinalIgnoreCase);
             foreach (var r in Result3)
+            {
+                Console.WriteLine(r);
+            }
+            #endregion
+
+            #region 13. Create a list of all digits in the array whose second letter is 'i' that is reversed from the order in the original array
+            var Result4 = Arr.Where(w =>char.ToLower(w[1]) == 'i').Reverse().ToList();
+            foreach (var r in Result4)
             {
                 Console.WriteLine(r);
             }
