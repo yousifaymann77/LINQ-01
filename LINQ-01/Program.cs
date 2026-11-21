@@ -31,6 +31,15 @@ namespace LINQ_01
                 Console.WriteLine(s);
             }
             #endregion
+
+            #region 4. Get all products where UnitPrice is between 10 and 30
+            var priceRange = ProductList.Where(p => p.UnitPrice >= 10.0000m && p.UnitPrice <= 30.0000m).Select(p => new { p.ProductName, p.UnitPrice });
+
+            foreach(var p in priceRange)
+            {
+                Console.WriteLine(p);
+            }
+            #endregion
         }
     }
 }
