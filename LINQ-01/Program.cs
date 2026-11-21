@@ -48,6 +48,15 @@ namespace LINQ_01
                 Console.WriteLine(c);
             }
             #endregion
+
+
+            #region 6. Create a new anonymous type
+            var newType = ProductList.Select(n => new {Name = n.ProductName , price = n.UnitPrice , stockStatus = n.UnitsInStock > 0 ? "Available" : "Out of stock" });
+            foreach (var nt in newType)
+            {
+                Console.WriteLine(nt);
+            }
+            #endregion
         }
     }
 }
