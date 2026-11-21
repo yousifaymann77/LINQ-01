@@ -15,6 +15,16 @@ namespace LINQ_01
                 Console.WriteLine(s);
             }
             #endregion
+
+            #region 2. Get a list of only the product names from ProductList. Print each name.
+            var names = ProductList.Select(s => s.ProductName);
+            foreach(var n in names)
+            {
+                Console.WriteLine(n);
+            }
+            #endregion
+
+            
         }
     }
 }
